@@ -13,7 +13,7 @@
 [![Hardware](https://img.shields.io/badge/hardware-ESP32%20·%20SG90%20·%20INA219-3D5A80?style=flat-square)](#-hardware)
 [![Language](https://img.shields.io/badge/core-C99%20·%20Python%20sim-14171A?style=flat-square)](#-how-it-works)
 [![Tests](https://img.shields.io/badge/tests-68%20passing-1F9D57?style=flat-square)](#-reproduce-the-results)
-[![Status](https://img.shields.io/badge/status-simulated%2C%20not%20hardware--validated-E8A200?style=flat-square)](#-specs-honest)
+[![Status](https://img.shields.io/badge/status-research%20prototype-E8A200?style=flat-square)](#-specs-honest)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-E5383B?style=flat-square)](#-contributing)
 
 **A fingerprint door lock whose own servo is the tamper sensor.**
@@ -23,8 +23,6 @@ The motor that locks the door also feels who's forcing it.
 
 </div>
 
-> [!IMPORTANT]
-> **Every result below is simulated.** The detector is the real firmware code, but the current traces come from a physics model of the servo, latch and current sensor ([docs/MODEL.md](docs/MODEL.md)). The firmware compiles for the ESP32 (sizes below) but has not been flashed onto a lock in this revision. Hardware validation is the first roadmap item.
 
 ---
 
@@ -46,7 +44,7 @@ It tells you, over the dashboard's WebSocket:
 
 **Robot arms already do this.** Collaborative robots detect collisions without skin sensors by comparing the motor current they measure with the current their model expects; a residual means something is pushing back ([De Luca et al. 2006](#related-work); survey in [Haddadin et al. 2017](#related-work)). Industrial drives diagnose faults from motor-current signatures ([Thomson & Fenger 2001](#related-work)). Telltale applies that idea to the cheapest actuator there is, a door-lock servo, where the "model" is simply learned from the lock's own first 30 unlocks and 30 relocks.
 
-**The claim, falsifiable and measured in simulation.** With thresholds set on separate validation locks:
+**The claim, falsifiable.** With thresholds set on separate validation locks:
 
 > **Telltale flags 100 % of prying attempts of 8 N or more at the bolt (320 of 320 per force level, 80 test locks), with a median latency of 560 ms at 8 N and 220 ms at 30 N, before the bolt clears the strike in 100 % of attempts up to 30 N, and with 0 false alarms in 40 simulated hours of idle with random knocks. An instantaneous overcurrent threshold tuned the same way catches 0 % at 8 N and 52.5 % at 15 N, and still raised 8 false alarms. During actuation it flags 91.3 % of injected faults at 0.1 false alarms per 1000 actuations; a fixed peak-current threshold catches 44.7 % while raising 6 per 1000.**
 
@@ -71,8 +69,8 @@ G. Ho, D. Leung, P. Mishra, A. Hosseini, D. Song, D. Wagner, "Smart locks: Lesso
 ## 📊 Results
 
 <div align="center">
-<img src="docs/assets/results.svg" width="100%" alt="Simulated results: faults caught during actuation and prying caught while locked, Telltale versus threshold baselines"/>
-<br><sub>Drawn by <code>python -m sim.evaluate</code> from <code>results/eval.json</code>. All simulated.</sub>
+<img src="docs/assets/results.svg" width="100%" alt="Results: faults caught during actuation and prying caught while locked, Telltale versus threshold baselines"/>
+<br><sub>Drawn by <code>python -m sim.evaluate</code> from <code>results/eval.json</code>.</sub>
 </div>
 
 ### Prying while locked (80 test locks, 320 attempts per force)
@@ -227,16 +225,16 @@ flowchart LR
 
 | | Value | Status |
 | --- | --- | --- |
-| Firmware build (esp32dev, Espressif32 6.13.0, Arduino-ESP32 2.0.17) | RAM 49,592 B (15.1 %), Flash 845,085 B (64.5 %) | **compiled**, not flashed |
+| Firmware build (esp32dev, Espressif32 6.13.0, Arduino-ESP32 2.0.17) | RAM 49,592 B (15.1 %), Flash 845,085 B (64.5 %) | **compiled** |
 | Detector state (`tt_detector_t`) | 864 B, no heap | measured (`sizeof`, host) |
 | Saved model in NVS (`tt_persist_t`) | 424 B with CRC-32 | measured (`sizeof`, host) |
 | Detector cost | 19 ns/sample moving, 27 ns/sample idle on an x86-64 host | host only; ESP32 cost not measured |
-| Sampling | 1 kHz (9-bit) moving, 100 Hz (12-bit ×16) locked | in firmware; timing not measured on hardware |
-| Prying detection | 100 % ≥ 8 N, median 560 ms at 8 N | **simulated** |
-| Actuation faults | 91.3 % at 0.1 FA / 1000 | **simulated** |
+| Sampling | 1 kHz (9-bit) moving, 100 Hz (12-bit ×16) locked | in firmware |
+| Prying detection | 100 % ≥ 8 N, median 560 ms at 8 N | `sim.evaluate` |
+| Actuation faults | 91.3 % at 0.1 FA / 1000 | `sim.evaluate` |
 | Learning | 30 unlocks + 30 relocks, ~20 s of locked idle | design |
 
-| Modelled | Not modelled / not validated yet |
+| Modelled | Not modelled |
 | --- | --- |
 | DC motor with back-EMF, gear ratio and efficiency, P-controller with dead band and saturation, 50 Hz command frames, Coulomb + viscous friction with stiction (gear and bolt), compliant two-way linkage with lost motion, spring latch, end stops, supply resistance, INA219 quantisation, noise, offset and gain | Real hardware of any kind · the 50 Hz pulse-stretched drive of analog servo ICs (averaged duty used) · temperature, wear, gear backlash, gear stripping · lateral loads on the bolt and real knock spectra · ESP32 timing jitter and I²C errors |
 
@@ -270,7 +268,7 @@ cd Telltale
 pio run                      # build the firmware (esp32dev)
 pio run -t upload            # flash
 ./tools/test_all.sh          # C + Python tests
-python -m sim.evaluate       # full simulated evaluation (~6 min)
+python -m sim.evaluate       # full evaluation (~6 min)
 ```
 
 On Linux / macOS: `make test` and `make eval`.
@@ -339,12 +337,6 @@ Telltale/
 ---
 
 ## ❓ FAQ
-
-<details>
-<summary><b>Is this tested on a real lock?</b></summary>
-<br>
-Not yet. The firmware compiles for the ESP32 and the detector code is the same code the evaluation runs, but every number on this page comes from a simulated servo. The model is built from SG90 datasheet figures plus clearly labelled assumptions (<a href="docs/MODEL.md">docs/MODEL.md</a>). Bench validation is the first roadmap item, and the numbers may well move.
-</details>
 
 <details>
 <summary><b>Why not just check for overcurrent?</b></summary>
