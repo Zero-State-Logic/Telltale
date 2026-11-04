@@ -1,0 +1,16 @@
+# build outputs
+build/
+.pio/
+*.obj
+*.o
+*.exe
+*.dll
+*.lib
+*.exp
+*.so
+*.dylib
+*.log
+__pycache__/
+*.pyc
+results/eval_quick.json
+results/eval_log.txt

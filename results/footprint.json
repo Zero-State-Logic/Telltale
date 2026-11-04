@@ -1,0 +1,20 @@
+{
+  "sizeof_bytes": {
+    "tt_detector_t": 864,
+    "tt_act_model_t": 196,
+    "tt_act_acc_t": 244,
+    "tt_idle_t": 64,
+    "tt_act_config_t": 108,
+    "tt_idle_config_t": 56,
+    "tt_act_result_t": 80,
+    "tt_persist_t": 424,
+    "tt_auth_t": 184,
+    "tt_hmac_t": 176,
+    "tt_motion_t": 60
+  },
+  "host_ns_per_sample": {
+    "actuation_feed_plus_finish": 19.44,
+    "idle_cusum": 27.0
+  },
+  "note": "Timings measured on the build host (x86-64, MSVC /O2), not on an ESP32."
+}

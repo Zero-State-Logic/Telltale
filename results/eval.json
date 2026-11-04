@@ -1,0 +1,2986 @@
+{
+  "about": "TELLTALE simulated evaluation. All numbers come from the physics model in sim/ and the C detector in firmware/telltale/. Not hardware measurements.",
+  "quick": false,
+  "fa_target_validation_per_actuation": 0.0005,
+  "actuation": {
+    "threshold": 7.238,
+    "baseline_peak_sigma": 3.994,
+    "baseline_fixed_peak_ma": 564.8,
+    "healthy": {
+      "actuations": 20000,
+      "telltale_false_alarms": {
+        "k": 2,
+        "n": 20000,
+        "rate": 0.0001,
+        "ci95": [
+          0.0,
+          0.0004
+        ]
+      },
+      "overcurrent_false_alarms": {
+        "k": 5,
+        "n": 20000,
+        "rate": 0.00025,
+        "ci95": [
+          0.0001,
+          0.0006
+        ]
+      },
+      "fixed_peak_false_alarms": {
+        "k": 120,
+        "n": 20000,
+        "rate": 0.006,
+        "ci95": [
+          0.005,
+          0.0072
+        ]
+      },
+      "score_median": 0.517,
+      "score_p999": 6.313
+    },
+    "layout": {
+      "unlock_ms": 1080,
+      "unlock_motion_ms": 880,
+      "relock_ms": 968,
+      "relock_motion_ms": 768,
+      "val_units": 40,
+      "test_units": 80,
+      "learn_runs": 30,
+      "healthy_cycles_per_unit": 125,
+      "fault_trials_per_unit_per_severity": 5,
+      "variation": "nominal"
+    },
+    "per_fault": {
+      "jam_unlock@0.3": {
+        "fault": "jam_unlock",
+        "severity": 0.3,
+        "class": "stall",
+        "telltale": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        }
+      },
+      "jam_unlock@0.5": {
+        "fault": "jam_unlock",
+        "severity": 0.5,
+        "class": "stall",
+        "telltale": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        }
+      },
+      "jam_unlock@0.7": {
+        "fault": "jam_unlock",
+        "severity": 0.7,
+        "class": "stall",
+        "telltale": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        }
+      },
+      "jam_unlock@0.9": {
+        "fault": "jam_unlock",
+        "severity": 0.9,
+        "class": "stall",
+        "telltale": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 380,
+            "n": 400,
+            "rate": 0.95,
+            "ci95": [
+              0.924,
+              0.9674
+            ]
+          },
+          "auc": 0.9979
+        }
+      },
+      "jam_relock@0.3": {
+        "fault": "jam_relock",
+        "severity": 0.3,
+        "class": "stall",
+        "telltale": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        }
+      },
+      "jam_relock@0.5": {
+        "fault": "jam_relock",
+        "severity": 0.5,
+        "class": "stall",
+        "telltale": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        }
+      },
+      "jam_relock@0.7": {
+        "fault": "jam_relock",
+        "severity": 0.7,
+        "class": "stall",
+        "telltale": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 383,
+            "n": 400,
+            "rate": 0.9575,
+            "ci95": [
+              0.933,
+              0.9733
+            ]
+          },
+          "auc": 0.9981
+        }
+      },
+      "jam_relock@0.9": {
+        "fault": "jam_relock",
+        "severity": 0.9,
+        "class": "stall",
+        "telltale": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 5,
+            "n": 400,
+            "rate": 0.0125,
+            "ci95": [
+              0.0054,
+              0.0289
+            ]
+          },
+          "auc": 0.4992
+        }
+      },
+      "linkage_broken@1": {
+        "fault": "linkage_broken",
+        "severity": 1.0,
+        "class": "linkage",
+        "telltale": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 0,
+            "n": 400,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0095
+            ]
+          },
+          "auc": 0.0236
+        }
+      },
+      "linkage_slack@1.5": {
+        "fault": "linkage_slack",
+        "severity": 1.5,
+        "class": "linkage",
+        "telltale": {
+          "detected": {
+            "k": 284,
+            "n": 400,
+            "rate": 0.71,
+            "ci95": [
+              0.6637,
+              0.7523
+            ]
+          },
+          "auc": 0.9995
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 381,
+            "n": 400,
+            "rate": 0.9525,
+            "ci95": [
+              0.927,
+              0.9694
+            ]
+          },
+          "auc": 0.9875
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 0,
+            "n": 400,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0095
+            ]
+          },
+          "auc": 0.4329
+        }
+      },
+      "linkage_slack@3": {
+        "fault": "linkage_slack",
+        "severity": 3.0,
+        "class": "linkage",
+        "telltale": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 351,
+            "n": 400,
+            "rate": 0.8775,
+            "ci95": [
+              0.8417,
+              0.9061
+            ]
+          },
+          "auc": 0.9762
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 0,
+            "n": 400,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0095
+            ]
+          },
+          "auc": 0.3714
+        }
+      },
+      "linkage_slack@5": {
+        "fault": "linkage_slack",
+        "severity": 5.0,
+        "class": "linkage",
+        "telltale": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 350,
+            "n": 400,
+            "rate": 0.875,
+            "ci95": [
+              0.839,
+              0.9039
+            ]
+          },
+          "auc": 0.9843
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 0,
+            "n": 400,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0095
+            ]
+          },
+          "auc": 0.2973
+        }
+      },
+      "brownout@4.2": {
+        "fault": "brownout",
+        "severity": 4.2,
+        "class": "brownout",
+        "telltale": {
+          "detected": {
+            "k": 383,
+            "n": 400,
+            "rate": 0.9575,
+            "ci95": [
+              0.933,
+              0.9733
+            ]
+          },
+          "auc": 0.9999
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 45,
+            "n": 400,
+            "rate": 0.1125,
+            "ci95": [
+              0.0851,
+              0.1472
+            ]
+          },
+          "auc": 0.4174
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 0,
+            "n": 400,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0095
+            ]
+          },
+          "auc": 0.4039
+        }
+      },
+      "brownout@4.4": {
+        "fault": "brownout",
+        "severity": 4.4,
+        "class": "brownout",
+        "telltale": {
+          "detected": {
+            "k": 250,
+            "n": 400,
+            "rate": 0.625,
+            "ci95": [
+              0.5766,
+              0.671
+            ]
+          },
+          "auc": 0.9992
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 17,
+            "n": 400,
+            "rate": 0.0425,
+            "ci95": [
+              0.0267,
+              0.067
+            ]
+          },
+          "auc": 0.3729
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 0,
+            "n": 400,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0095
+            ]
+          },
+          "auc": 0.4432
+        }
+      },
+      "brownout@4.6": {
+        "fault": "brownout",
+        "severity": 4.6,
+        "class": "brownout",
+        "telltale": {
+          "detected": {
+            "k": 57,
+            "n": 400,
+            "rate": 0.1425,
+            "ci95": [
+              0.1116,
+              0.1802
+            ]
+          },
+          "auc": 0.9908
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 5,
+            "n": 400,
+            "rate": 0.0125,
+            "ci95": [
+              0.0054,
+              0.0289
+            ]
+          },
+          "auc": 0.2481
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 0,
+            "n": 400,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0095
+            ]
+          },
+          "auc": 0.455
+        }
+      },
+      "friction@1.5": {
+        "fault": "friction",
+        "severity": 1.5,
+        "class": "friction",
+        "telltale": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 40,
+            "n": 400,
+            "rate": 0.1,
+            "ci95": [
+              0.0743,
+              0.1333
+            ]
+          },
+          "auc": 0.6957
+        }
+      },
+      "friction@2": {
+        "fault": "friction",
+        "severity": 2.0,
+        "class": "friction",
+        "telltale": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 128,
+            "n": 400,
+            "rate": 0.32,
+            "ci95": [
+              0.2762,
+              0.3672
+            ]
+          },
+          "auc": 0.838
+        }
+      },
+      "friction@3": {
+        "fault": "friction",
+        "severity": 3.0,
+        "class": "friction",
+        "telltale": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 400,
+            "n": 400,
+            "rate": 1.0,
+            "ci95": [
+              0.9905,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 279,
+            "n": 400,
+            "rate": 0.6975,
+            "ci95": [
+              0.6508,
+              0.7405
+            ]
+          },
+          "auc": 0.9762
+        }
+      }
+    },
+    "per_class": {
+      "stall": {
+        "telltale": {
+          "detected": {
+            "k": 3200,
+            "n": 3200,
+            "rate": 1.0,
+            "ci95": [
+              0.9988,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 3200,
+            "n": 3200,
+            "rate": 1.0,
+            "ci95": [
+              0.9988,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 2768,
+            "n": 3200,
+            "rate": 0.865,
+            "ci95": [
+              0.8527,
+              0.8764
+            ]
+          },
+          "auc": 0.9369
+        },
+        "original_lock": {
+          "detected": {
+            "k": 0,
+            "n": 3200,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0012
+            ]
+          }
+        }
+      },
+      "linkage": {
+        "telltale": {
+          "detected": {
+            "k": 1484,
+            "n": 1600,
+            "rate": 0.9275,
+            "ci95": [
+              0.9137,
+              0.9392
+            ]
+          },
+          "auc": 0.9999
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 1482,
+            "n": 1600,
+            "rate": 0.92625,
+            "ci95": [
+              0.9124,
+              0.9381
+            ]
+          },
+          "auc": 0.987
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 0,
+            "n": 1600,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0024
+            ]
+          },
+          "auc": 0.2813
+        },
+        "original_lock": {
+          "detected": {
+            "k": 0,
+            "n": 1600,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0024
+            ]
+          }
+        }
+      },
+      "brownout": {
+        "telltale": {
+          "detected": {
+            "k": 690,
+            "n": 1200,
+            "rate": 0.575,
+            "ci95": [
+              0.5468,
+              0.6027
+            ]
+          },
+          "auc": 0.9966
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 67,
+            "n": 1200,
+            "rate": 0.05583333333333333,
+            "ci95": [
+              0.0442,
+              0.0703
+            ]
+          },
+          "auc": 0.3461
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 0,
+            "n": 1200,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0032
+            ]
+          },
+          "auc": 0.434
+        },
+        "original_lock": {
+          "detected": {
+            "k": 0,
+            "n": 1200,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0032
+            ]
+          }
+        }
+      },
+      "friction": {
+        "telltale": {
+          "detected": {
+            "k": 1200,
+            "n": 1200,
+            "rate": 1.0,
+            "ci95": [
+              0.9968,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 1200,
+            "n": 1200,
+            "rate": 1.0,
+            "ci95": [
+              0.9968,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 447,
+            "n": 1200,
+            "rate": 0.3725,
+            "ci95": [
+              0.3456,
+              0.4002
+            ]
+          },
+          "auc": 0.8366
+        },
+        "original_lock": {
+          "detected": {
+            "k": 0,
+            "n": 1200,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0032
+            ]
+          }
+        }
+      }
+    },
+    "all_faults": {
+      "telltale": {
+        "k": 6574,
+        "n": 7200,
+        "rate": 0.9130555555555555,
+        "ci95": [
+          0.9063,
+          0.9193
+        ]
+      },
+      "overcurrent": {
+        "k": 5949,
+        "n": 7200,
+        "rate": 0.82625,
+        "ci95": [
+          0.8173,
+          0.8348
+        ]
+      },
+      "fixed_peak": {
+        "k": 3215,
+        "n": 7200,
+        "rate": 0.4465277777777778,
+        "ci95": [
+          0.4351,
+          0.458
+        ]
+      },
+      "original_lock": {
+        "k": 0,
+        "n": 7200,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0005
+        ]
+      }
+    },
+    "classification": {
+      "confusion": {
+        "stall": {
+          "friction": 468,
+          "stall": 2732
+        },
+        "linkage": {
+          "linkage": 1214,
+          "friction": 267,
+          "unknown": 3
+        },
+        "brownout": {
+          "brownout": 662,
+          "friction": 22,
+          "unknown": 6
+        },
+        "friction": {
+          "brownout": 17,
+          "friction": 1182,
+          "unknown": 1
+        }
+      },
+      "accuracy_on_detected": 0.8807,
+      "n": 6574
+    },
+    "ablations": {
+      "telltale_default": {
+        "threshold": 7.238,
+        "false_alarms": {
+          "k": 2,
+          "n": 20000,
+          "rate": 0.0001,
+          "ci95": [
+            0.0,
+            0.0004
+          ]
+        },
+        "faults_detected": {
+          "k": 6574,
+          "n": 7200,
+          "rate": 0.9130555555555555,
+          "ci95": [
+            0.9063,
+            0.9193
+          ]
+        },
+        "auc_all_faults": 0.9994
+      },
+      "no_template_residual": {
+        "threshold": 6.747,
+        "false_alarms": {
+          "k": 15,
+          "n": 20000,
+          "rate": 0.00075,
+          "ci95": [
+            0.0005,
+            0.0012
+          ]
+        },
+        "faults_detected": {
+          "k": 5546,
+          "n": 7200,
+          "rate": 0.7702777777777777,
+          "ci95": [
+            0.7604,
+            0.7798
+          ]
+        },
+        "auc_all_faults": 0.9977
+      },
+      "peak_and_mean_only": {
+        "threshold": 3.623,
+        "false_alarms": {
+          "k": 0,
+          "n": 20000,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.0002
+          ]
+        },
+        "faults_detected": {
+          "k": 5135,
+          "n": 7200,
+          "rate": 0.7131944444444445,
+          "ci95": [
+            0.7026,
+            0.7235
+          ]
+        },
+        "auc_all_faults": 0.9984
+      }
+    }
+  },
+  "actuation_stress": {
+    "threshold": 7.97,
+    "baseline_peak_sigma": 3.326,
+    "baseline_fixed_peak_ma": 619.2,
+    "healthy": {
+      "actuations": 4000,
+      "telltale_false_alarms": {
+        "k": 3,
+        "n": 4000,
+        "rate": 0.00075,
+        "ci95": [
+          0.0003,
+          0.0022
+        ]
+      },
+      "overcurrent_false_alarms": {
+        "k": 4,
+        "n": 4000,
+        "rate": 0.001,
+        "ci95": [
+          0.0004,
+          0.0026
+        ]
+      },
+      "fixed_peak_false_alarms": {
+        "k": 0,
+        "n": 4000,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.001
+        ]
+      },
+      "score_median": 1.401,
+      "score_p999": 6.944
+    },
+    "layout": {
+      "unlock_ms": 1080,
+      "unlock_motion_ms": 880,
+      "relock_ms": 968,
+      "relock_motion_ms": 768,
+      "val_units": 20,
+      "test_units": 40,
+      "learn_runs": 30,
+      "healthy_cycles_per_unit": 50,
+      "fault_trials_per_unit_per_severity": 3,
+      "variation": "stress"
+    },
+    "per_fault": {
+      "jam_unlock@0.3": {
+        "fault": "jam_unlock",
+        "severity": 0.3,
+        "class": "stall",
+        "telltale": {
+          "detected": {
+            "k": 120,
+            "n": 120,
+            "rate": 1.0,
+            "ci95": [
+              0.969,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 120,
+            "n": 120,
+            "rate": 1.0,
+            "ci95": [
+              0.969,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 119,
+            "n": 120,
+            "rate": 0.9916666666666667,
+            "ci95": [
+              0.9543,
+              0.9985
+            ]
+          },
+          "auc": 1.0
+        }
+      },
+      "jam_unlock@0.5": {
+        "fault": "jam_unlock",
+        "severity": 0.5,
+        "class": "stall",
+        "telltale": {
+          "detected": {
+            "k": 120,
+            "n": 120,
+            "rate": 1.0,
+            "ci95": [
+              0.969,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 120,
+            "n": 120,
+            "rate": 1.0,
+            "ci95": [
+              0.969,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 116,
+            "n": 120,
+            "rate": 0.9666666666666667,
+            "ci95": [
+              0.9174,
+              0.987
+            ]
+          },
+          "auc": 1.0
+        }
+      },
+      "jam_unlock@0.7": {
+        "fault": "jam_unlock",
+        "severity": 0.7,
+        "class": "stall",
+        "telltale": {
+          "detected": {
+            "k": 120,
+            "n": 120,
+            "rate": 1.0,
+            "ci95": [
+              0.969,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 120,
+            "n": 120,
+            "rate": 1.0,
+            "ci95": [
+              0.969,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 115,
+            "n": 120,
+            "rate": 0.9583333333333334,
+            "ci95": [
+              0.9062,
+              0.9821
+            ]
+          },
+          "auc": 1.0
+        }
+      },
+      "jam_unlock@0.9": {
+        "fault": "jam_unlock",
+        "severity": 0.9,
+        "class": "stall",
+        "telltale": {
+          "detected": {
+            "k": 120,
+            "n": 120,
+            "rate": 1.0,
+            "ci95": [
+              0.969,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 117,
+            "n": 120,
+            "rate": 0.975,
+            "ci95": [
+              0.9291,
+              0.9915
+            ]
+          },
+          "auc": 0.9972
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 77,
+            "n": 120,
+            "rate": 0.6416666666666667,
+            "ci95": [
+              0.5527,
+              0.7218
+            ]
+          },
+          "auc": 0.9954
+        }
+      },
+      "jam_relock@0.3": {
+        "fault": "jam_relock",
+        "severity": 0.3,
+        "class": "stall",
+        "telltale": {
+          "detected": {
+            "k": 120,
+            "n": 120,
+            "rate": 1.0,
+            "ci95": [
+              0.969,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 120,
+            "n": 120,
+            "rate": 1.0,
+            "ci95": [
+              0.969,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 115,
+            "n": 120,
+            "rate": 0.9583333333333334,
+            "ci95": [
+              0.9062,
+              0.9821
+            ]
+          },
+          "auc": 1.0
+        }
+      },
+      "jam_relock@0.5": {
+        "fault": "jam_relock",
+        "severity": 0.5,
+        "class": "stall",
+        "telltale": {
+          "detected": {
+            "k": 120,
+            "n": 120,
+            "rate": 1.0,
+            "ci95": [
+              0.969,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 120,
+            "n": 120,
+            "rate": 1.0,
+            "ci95": [
+              0.969,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 114,
+            "n": 120,
+            "rate": 0.95,
+            "ci95": [
+              0.8952,
+              0.9769
+            ]
+          },
+          "auc": 1.0
+        }
+      },
+      "jam_relock@0.7": {
+        "fault": "jam_relock",
+        "severity": 0.7,
+        "class": "stall",
+        "telltale": {
+          "detected": {
+            "k": 120,
+            "n": 120,
+            "rate": 1.0,
+            "ci95": [
+              0.969,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 120,
+            "n": 120,
+            "rate": 1.0,
+            "ci95": [
+              0.969,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 86,
+            "n": 120,
+            "rate": 0.7166666666666667,
+            "ci95": [
+              0.6303,
+              0.7896
+            ]
+          },
+          "auc": 0.9979
+        }
+      },
+      "jam_relock@0.9": {
+        "fault": "jam_relock",
+        "severity": 0.9,
+        "class": "stall",
+        "telltale": {
+          "detected": {
+            "k": 120,
+            "n": 120,
+            "rate": 1.0,
+            "ci95": [
+              0.969,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 120,
+            "n": 120,
+            "rate": 1.0,
+            "ci95": [
+              0.969,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 0,
+            "n": 120,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.031
+            ]
+          },
+          "auc": 0.4847
+        }
+      },
+      "linkage_broken@1": {
+        "fault": "linkage_broken",
+        "severity": 1.0,
+        "class": "linkage",
+        "telltale": {
+          "detected": {
+            "k": 120,
+            "n": 120,
+            "rate": 1.0,
+            "ci95": [
+              0.969,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 120,
+            "n": 120,
+            "rate": 1.0,
+            "ci95": [
+              0.969,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 0,
+            "n": 120,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.031
+            ]
+          },
+          "auc": 0.0443
+        }
+      },
+      "linkage_slack@1.5": {
+        "fault": "linkage_slack",
+        "severity": 1.5,
+        "class": "linkage",
+        "telltale": {
+          "detected": {
+            "k": 13,
+            "n": 120,
+            "rate": 0.10833333333333334,
+            "ci95": [
+              0.0644,
+              0.1766
+            ]
+          },
+          "auc": 0.9756
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 98,
+            "n": 120,
+            "rate": 0.8166666666666667,
+            "ci95": [
+              0.738,
+              0.8757
+            ]
+          },
+          "auc": 0.996
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 0,
+            "n": 120,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.031
+            ]
+          },
+          "auc": 0.4394
+        }
+      },
+      "linkage_slack@3": {
+        "fault": "linkage_slack",
+        "severity": 3.0,
+        "class": "linkage",
+        "telltale": {
+          "detected": {
+            "k": 54,
+            "n": 120,
+            "rate": 0.45,
+            "ci95": [
+              0.3639,
+              0.5392
+            ]
+          },
+          "auc": 0.9967
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 93,
+            "n": 120,
+            "rate": 0.775,
+            "ci95": [
+              0.6924,
+              0.8405
+            ]
+          },
+          "auc": 0.9731
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 0,
+            "n": 120,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.031
+            ]
+          },
+          "auc": 0.3898
+        }
+      },
+      "linkage_slack@5": {
+        "fault": "linkage_slack",
+        "severity": 5.0,
+        "class": "linkage",
+        "telltale": {
+          "detected": {
+            "k": 111,
+            "n": 120,
+            "rate": 0.925,
+            "ci95": [
+              0.8636,
+              0.96
+            ]
+          },
+          "auc": 0.9998
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 97,
+            "n": 120,
+            "rate": 0.8083333333333333,
+            "ci95": [
+              0.7288,
+              0.8688
+            ]
+          },
+          "auc": 0.9881
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 0,
+            "n": 120,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.031
+            ]
+          },
+          "auc": 0.3085
+        }
+      },
+      "brownout@4.2": {
+        "fault": "brownout",
+        "severity": 4.2,
+        "class": "brownout",
+        "telltale": {
+          "detected": {
+            "k": 39,
+            "n": 120,
+            "rate": 0.325,
+            "ci95": [
+              0.2478,
+              0.4131
+            ]
+          },
+          "auc": 0.9381
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 6,
+            "n": 120,
+            "rate": 0.05,
+            "ci95": [
+              0.0231,
+              0.1048
+            ]
+          },
+          "auc": 0.3126
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 0,
+            "n": 120,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.031
+            ]
+          },
+          "auc": 0.3833
+        }
+      },
+      "brownout@4.4": {
+        "fault": "brownout",
+        "severity": 4.4,
+        "class": "brownout",
+        "telltale": {
+          "detected": {
+            "k": 14,
+            "n": 120,
+            "rate": 0.11666666666666667,
+            "ci95": [
+              0.0708,
+              0.1863
+            ]
+          },
+          "auc": 0.8725
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 2,
+            "n": 120,
+            "rate": 0.016666666666666666,
+            "ci95": [
+              0.0046,
+              0.0587
+            ]
+          },
+          "auc": 0.3147
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 0,
+            "n": 120,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.031
+            ]
+          },
+          "auc": 0.4377
+        }
+      },
+      "brownout@4.6": {
+        "fault": "brownout",
+        "severity": 4.6,
+        "class": "brownout",
+        "telltale": {
+          "detected": {
+            "k": 3,
+            "n": 120,
+            "rate": 0.025,
+            "ci95": [
+              0.0085,
+              0.0709
+            ]
+          },
+          "auc": 0.6942
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 0,
+            "n": 120,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.031
+            ]
+          },
+          "auc": 0.2823
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 0,
+            "n": 120,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.031
+            ]
+          },
+          "auc": 0.4369
+        }
+      },
+      "friction@1.5": {
+        "fault": "friction",
+        "severity": 1.5,
+        "class": "friction",
+        "telltale": {
+          "detected": {
+            "k": 66,
+            "n": 120,
+            "rate": 0.55,
+            "ci95": [
+              0.4608,
+              0.6361
+            ]
+          },
+          "auc": 0.9747
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 70,
+            "n": 120,
+            "rate": 0.5833333333333334,
+            "ci95": [
+              0.4939,
+              0.6676
+            ]
+          },
+          "auc": 0.9609
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 2,
+            "n": 120,
+            "rate": 0.016666666666666666,
+            "ci95": [
+              0.0046,
+              0.0587
+            ]
+          },
+          "auc": 0.6896
+        }
+      },
+      "friction@2": {
+        "fault": "friction",
+        "severity": 2.0,
+        "class": "friction",
+        "telltale": {
+          "detected": {
+            "k": 118,
+            "n": 120,
+            "rate": 0.9833333333333333,
+            "ci95": [
+              0.9413,
+              0.9954
+            ]
+          },
+          "auc": 0.9999
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 114,
+            "n": 120,
+            "rate": 0.95,
+            "ci95": [
+              0.8952,
+              0.9769
+            ]
+          },
+          "auc": 0.9979
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 10,
+            "n": 120,
+            "rate": 0.08333333333333333,
+            "ci95": [
+              0.0459,
+              0.1466
+            ]
+          },
+          "auc": 0.8365
+        }
+      },
+      "friction@3": {
+        "fault": "friction",
+        "severity": 3.0,
+        "class": "friction",
+        "telltale": {
+          "detected": {
+            "k": 120,
+            "n": 120,
+            "rate": 1.0,
+            "ci95": [
+              0.969,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 120,
+            "n": 120,
+            "rate": 1.0,
+            "ci95": [
+              0.969,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 29,
+            "n": 120,
+            "rate": 0.24166666666666667,
+            "ci95": [
+              0.1739,
+              0.3255
+            ]
+          },
+          "auc": 0.9597
+        }
+      }
+    },
+    "per_class": {
+      "stall": {
+        "telltale": {
+          "detected": {
+            "k": 960,
+            "n": 960,
+            "rate": 1.0,
+            "ci95": [
+              0.996,
+              1.0
+            ]
+          },
+          "auc": 1.0
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 957,
+            "n": 960,
+            "rate": 0.996875,
+            "ci95": [
+              0.9909,
+              0.9989
+            ]
+          },
+          "auc": 0.9997
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 742,
+            "n": 960,
+            "rate": 0.7729166666666667,
+            "ci95": [
+              0.7454,
+              0.7983
+            ]
+          },
+          "auc": 0.9347
+        },
+        "original_lock": {
+          "detected": {
+            "k": 0,
+            "n": 960,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.004
+            ]
+          }
+        }
+      },
+      "linkage": {
+        "telltale": {
+          "detected": {
+            "k": 298,
+            "n": 480,
+            "rate": 0.6208333333333333,
+            "ci95": [
+              0.5766,
+              0.6631
+            ]
+          },
+          "auc": 0.993
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 408,
+            "n": 480,
+            "rate": 0.85,
+            "ci95": [
+              0.8153,
+              0.8792
+            ]
+          },
+          "auc": 0.9893
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 0,
+            "n": 480,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0079
+            ]
+          },
+          "auc": 0.2955
+        },
+        "original_lock": {
+          "detected": {
+            "k": 0,
+            "n": 480,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0079
+            ]
+          }
+        }
+      },
+      "brownout": {
+        "telltale": {
+          "detected": {
+            "k": 56,
+            "n": 360,
+            "rate": 0.15555555555555556,
+            "ci95": [
+              0.1218,
+              0.1966
+            ]
+          },
+          "auc": 0.8349
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 8,
+            "n": 360,
+            "rate": 0.022222222222222223,
+            "ci95": [
+              0.0113,
+              0.0432
+            ]
+          },
+          "auc": 0.3032
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 0,
+            "n": 360,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0106
+            ]
+          },
+          "auc": 0.4193
+        },
+        "original_lock": {
+          "detected": {
+            "k": 0,
+            "n": 360,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0106
+            ]
+          }
+        }
+      },
+      "friction": {
+        "telltale": {
+          "detected": {
+            "k": 304,
+            "n": 360,
+            "rate": 0.8444444444444444,
+            "ci95": [
+              0.8034,
+              0.8782
+            ]
+          },
+          "auc": 0.9915
+        },
+        "overcurrent": {
+          "detected": {
+            "k": 304,
+            "n": 360,
+            "rate": 0.8444444444444444,
+            "ci95": [
+              0.8034,
+              0.8782
+            ]
+          },
+          "auc": 0.9863
+        },
+        "fixed_peak": {
+          "detected": {
+            "k": 41,
+            "n": 360,
+            "rate": 0.11388888888888889,
+            "ci95": [
+              0.0851,
+              0.1509
+            ]
+          },
+          "auc": 0.8286
+        },
+        "original_lock": {
+          "detected": {
+            "k": 0,
+            "n": 360,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0106
+            ]
+          }
+        }
+      }
+    },
+    "all_faults": {
+      "telltale": {
+        "k": 1618,
+        "n": 2160,
+        "rate": 0.7490740740740741,
+        "ci95": [
+          0.7304,
+          0.7669
+        ]
+      },
+      "overcurrent": {
+        "k": 1677,
+        "n": 2160,
+        "rate": 0.7763888888888889,
+        "ci95": [
+          0.7583,
+          0.7935
+        ]
+      },
+      "fixed_peak": {
+        "k": 783,
+        "n": 2160,
+        "rate": 0.3625,
+        "ci95": [
+          0.3425,
+          0.383
+        ]
+      },
+      "original_lock": {
+        "k": 0,
+        "n": 2160,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0018
+        ]
+      }
+    },
+    "classification": {
+      "confusion": {
+        "stall": {
+          "stall": 831,
+          "friction": 128,
+          "brownout": 1
+        },
+        "linkage": {
+          "linkage": 195,
+          "friction": 103
+        },
+        "brownout": {
+          "friction": 13,
+          "brownout": 43
+        },
+        "friction": {
+          "friction": 296,
+          "brownout": 6,
+          "unknown": 2
+        }
+      },
+      "accuracy_on_detected": 0.8436,
+      "n": 1618
+    },
+    "ablations": {
+      "telltale_default": {
+        "threshold": 7.97,
+        "false_alarms": {
+          "k": 3,
+          "n": 4000,
+          "rate": 0.00075,
+          "ci95": [
+            0.0003,
+            0.0022
+          ]
+        },
+        "faults_detected": {
+          "k": 1618,
+          "n": 2160,
+          "rate": 0.7490740740740741,
+          "ci95": [
+            0.7304,
+            0.7669
+          ]
+        },
+        "auc_all_faults": 0.9695
+      },
+      "no_template_residual": {
+        "threshold": 5.564,
+        "false_alarms": {
+          "k": 8,
+          "n": 4000,
+          "rate": 0.002,
+          "ci95": [
+            0.001,
+            0.0039
+          ]
+        },
+        "faults_detected": {
+          "k": 1684,
+          "n": 2160,
+          "rate": 0.7796296296296297,
+          "ci95": [
+            0.7617,
+            0.7966
+          ]
+        },
+        "auc_all_faults": 0.9659
+      },
+      "peak_and_mean_only": {
+        "threshold": 3.401,
+        "false_alarms": {
+          "k": 5,
+          "n": 4000,
+          "rate": 0.00125,
+          "ci95": [
+            0.0005,
+            0.0029
+          ]
+        },
+        "faults_detected": {
+          "k": 1623,
+          "n": 2160,
+          "rate": 0.7513888888888889,
+          "ci95": [
+            0.7327,
+            0.7692
+          ]
+        },
+        "auc_all_faults": 0.966
+      }
+    }
+  },
+  "drift": {
+    "adaptive": {
+      "false_alarms_during_creep": {
+        "k": 346,
+        "n": 12000,
+        "rate": 0.028833333333333332,
+        "ci95": [
+          0.026,
+          0.032
+        ]
+      },
+      "sudden_2x_friction_detected": {
+        "k": 15,
+        "n": 15,
+        "rate": 1.0,
+        "ci95": [
+          0.7961,
+          1.0
+        ]
+      }
+    },
+    "frozen": {
+      "false_alarms_during_creep": {
+        "k": 1862,
+        "n": 12000,
+        "rate": 0.15516666666666667,
+        "ci95": [
+          0.1488,
+          0.1618
+        ]
+      },
+      "sudden_2x_friction_detected": {
+        "k": 15,
+        "n": 15,
+        "rate": 1.0,
+        "ci95": [
+          0.7961,
+          1.0
+        ]
+      }
+    },
+    "setup": {
+      "units": 15,
+      "creep_runs": 400,
+      "friction_creep": "+40 % linear"
+    }
+  },
+  "idle": {
+    "thresholds": {
+      "cusum_h_hi": 360.0,
+      "instant_threshold_ma": 658.1,
+      "debounced_threshold_ma": 11.3,
+      "debounce_samples": 30
+    },
+    "healthy": {
+      "hours": 40.0,
+      "cusum_alarms": 0,
+      "instant_alarms": 8,
+      "debounced_units_with_alarm": 2
+    },
+    "prying": {
+      "4N": {
+        "cusum": {
+          "detected": {
+            "k": 253,
+            "n": 320,
+            "rate": 0.790625,
+            "ci95": [
+              0.7427,
+              0.8316
+            ]
+          },
+          "latency_ms": {
+            "p50": 1290.0,
+            "p90": 1994.0
+          },
+          "before_bolt_moved_2mm": {
+            "k": 253,
+            "n": 320,
+            "rate": 0.790625,
+            "ci95": [
+              0.7427,
+              0.8316
+            ]
+          },
+          "before_bolt_cleared_strike": {
+            "k": 253,
+            "n": 320,
+            "rate": 0.790625,
+            "ci95": [
+              0.7427,
+              0.8316
+            ]
+          },
+          "fired_before_onset": 0
+        },
+        "instant": {
+          "detected": {
+            "k": 0,
+            "n": 320,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0119
+            ]
+          },
+          "latency_ms": {
+            "p50": null,
+            "p90": null
+          },
+          "before_bolt_moved_2mm": {
+            "k": 0,
+            "n": 320,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0119
+            ]
+          },
+          "before_bolt_cleared_strike": {
+            "k": 0,
+            "n": 320,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0119
+            ]
+          },
+          "fired_before_onset": 0
+        },
+        "debounced": {
+          "detected": {
+            "k": 318,
+            "n": 320,
+            "rate": 0.99375,
+            "ci95": [
+              0.9775,
+              0.9983
+            ]
+          },
+          "latency_ms": {
+            "p50": 890.0,
+            "p90": 1150.0
+          },
+          "before_bolt_moved_2mm": {
+            "k": 318,
+            "n": 320,
+            "rate": 0.99375,
+            "ci95": [
+              0.9775,
+              0.9983
+            ]
+          },
+          "before_bolt_cleared_strike": {
+            "k": 318,
+            "n": 320,
+            "rate": 0.99375,
+            "ci95": [
+              0.9775,
+              0.9983
+            ]
+          },
+          "fired_before_onset": 0
+        },
+        "bolt_moved_2mm": {
+          "k": 0,
+          "n": 320,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.0119
+          ]
+        },
+        "bolt_cleared_strike": {
+          "k": 0,
+          "n": 320,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.0119
+          ]
+        }
+      },
+      "8N": {
+        "cusum": {
+          "detected": {
+            "k": 320,
+            "n": 320,
+            "rate": 1.0,
+            "ci95": [
+              0.9881,
+              1.0
+            ]
+          },
+          "latency_ms": {
+            "p50": 560.0,
+            "p90": 730.0
+          },
+          "before_bolt_moved_2mm": {
+            "k": 201,
+            "n": 320,
+            "rate": 0.628125,
+            "ci95": [
+              0.5739,
+              0.6793
+            ]
+          },
+          "before_bolt_cleared_strike": {
+            "k": 320,
+            "n": 320,
+            "rate": 1.0,
+            "ci95": [
+              0.9881,
+              1.0
+            ]
+          },
+          "fired_before_onset": 0
+        },
+        "instant": {
+          "detected": {
+            "k": 0,
+            "n": 320,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0119
+            ]
+          },
+          "latency_ms": {
+            "p50": null,
+            "p90": null
+          },
+          "before_bolt_moved_2mm": {
+            "k": 0,
+            "n": 320,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0119
+            ]
+          },
+          "before_bolt_cleared_strike": {
+            "k": 0,
+            "n": 320,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0119
+            ]
+          },
+          "fired_before_onset": 0
+        },
+        "debounced": {
+          "detected": {
+            "k": 320,
+            "n": 320,
+            "rate": 1.0,
+            "ci95": [
+              0.9881,
+              1.0
+            ]
+          },
+          "latency_ms": {
+            "p50": 610.0,
+            "p90": 770.0
+          },
+          "before_bolt_moved_2mm": {
+            "k": 177,
+            "n": 320,
+            "rate": 0.553125,
+            "ci95": [
+              0.4983,
+              0.6066
+            ]
+          },
+          "before_bolt_cleared_strike": {
+            "k": 320,
+            "n": 320,
+            "rate": 1.0,
+            "ci95": [
+              0.9881,
+              1.0
+            ]
+          },
+          "fired_before_onset": 0
+        },
+        "bolt_moved_2mm": {
+          "k": 320,
+          "n": 320,
+          "rate": 1.0,
+          "ci95": [
+            0.9881,
+            1.0
+          ]
+        },
+        "bolt_cleared_strike": {
+          "k": 0,
+          "n": 320,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.0119
+          ]
+        }
+      },
+      "15N": {
+        "cusum": {
+          "detected": {
+            "k": 320,
+            "n": 320,
+            "rate": 1.0,
+            "ci95": [
+              0.9881,
+              1.0
+            ]
+          },
+          "latency_ms": {
+            "p50": 350.0,
+            "p90": 490.0
+          },
+          "before_bolt_moved_2mm": {
+            "k": 83,
+            "n": 320,
+            "rate": 0.259375,
+            "ci95": [
+              0.2144,
+              0.3101
+            ]
+          },
+          "before_bolt_cleared_strike": {
+            "k": 320,
+            "n": 320,
+            "rate": 1.0,
+            "ci95": [
+              0.9881,
+              1.0
+            ]
+          },
+          "fired_before_onset": 0
+        },
+        "instant": {
+          "detected": {
+            "k": 168,
+            "n": 320,
+            "rate": 0.525,
+            "ci95": [
+              0.4703,
+              0.5791
+            ]
+          },
+          "latency_ms": {
+            "p50": 750.0,
+            "p90": 1110.0
+          },
+          "before_bolt_moved_2mm": {
+            "k": 0,
+            "n": 320,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0119
+            ]
+          },
+          "before_bolt_cleared_strike": {
+            "k": 168,
+            "n": 320,
+            "rate": 0.525,
+            "ci95": [
+              0.4703,
+              0.5791
+            ]
+          },
+          "fired_before_onset": 0
+        },
+        "debounced": {
+          "detected": {
+            "k": 320,
+            "n": 320,
+            "rate": 1.0,
+            "ci95": [
+              0.9881,
+              1.0
+            ]
+          },
+          "latency_ms": {
+            "p50": 465.0,
+            "p90": 570.0
+          },
+          "before_bolt_moved_2mm": {
+            "k": 39,
+            "n": 320,
+            "rate": 0.121875,
+            "ci95": [
+              0.0904,
+              0.1623
+            ]
+          },
+          "before_bolt_cleared_strike": {
+            "k": 320,
+            "n": 320,
+            "rate": 1.0,
+            "ci95": [
+              0.9881,
+              1.0
+            ]
+          },
+          "fired_before_onset": 0
+        },
+        "bolt_moved_2mm": {
+          "k": 320,
+          "n": 320,
+          "rate": 1.0,
+          "ci95": [
+            0.9881,
+            1.0
+          ]
+        },
+        "bolt_cleared_strike": {
+          "k": 0,
+          "n": 320,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.0119
+          ]
+        }
+      },
+      "30N": {
+        "cusum": {
+          "detected": {
+            "k": 320,
+            "n": 320,
+            "rate": 1.0,
+            "ci95": [
+              0.9881,
+              1.0
+            ]
+          },
+          "latency_ms": {
+            "p50": 220.0,
+            "p90": 320.0
+          },
+          "before_bolt_moved_2mm": {
+            "k": 43,
+            "n": 320,
+            "rate": 0.134375,
+            "ci95": [
+              0.1013,
+              0.1761
+            ]
+          },
+          "before_bolt_cleared_strike": {
+            "k": 320,
+            "n": 320,
+            "rate": 1.0,
+            "ci95": [
+              0.9881,
+              1.0
+            ]
+          },
+          "fired_before_onset": 0
+        },
+        "instant": {
+          "detected": {
+            "k": 320,
+            "n": 320,
+            "rate": 1.0,
+            "ci95": [
+              0.9881,
+              1.0
+            ]
+          },
+          "latency_ms": {
+            "p50": 380.0,
+            "p90": 581.0
+          },
+          "before_bolt_moved_2mm": {
+            "k": 0,
+            "n": 320,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0119
+            ]
+          },
+          "before_bolt_cleared_strike": {
+            "k": 320,
+            "n": 320,
+            "rate": 1.0,
+            "ci95": [
+              0.9881,
+              1.0
+            ]
+          },
+          "fired_before_onset": 0
+        },
+        "debounced": {
+          "detected": {
+            "k": 320,
+            "n": 320,
+            "rate": 1.0,
+            "ci95": [
+              0.9881,
+              1.0
+            ]
+          },
+          "latency_ms": {
+            "p50": 390.0,
+            "p90": 440.0
+          },
+          "before_bolt_moved_2mm": {
+            "k": 1,
+            "n": 320,
+            "rate": 0.003125,
+            "ci95": [
+              0.0006,
+              0.0175
+            ]
+          },
+          "before_bolt_cleared_strike": {
+            "k": 260,
+            "n": 320,
+            "rate": 0.8125,
+            "ci95": [
+              0.7661,
+              0.8515
+            ]
+          },
+          "fired_before_onset": 0
+        },
+        "bolt_moved_2mm": {
+          "k": 320,
+          "n": 320,
+          "rate": 1.0,
+          "ci95": [
+            0.9881,
+            1.0
+          ]
+        },
+        "bolt_cleared_strike": {
+          "k": 320,
+          "n": 320,
+          "rate": 1.0,
+          "ci95": [
+            0.9881,
+            1.0
+          ]
+        }
+      },
+      "60N": {
+        "cusum": {
+          "detected": {
+            "k": 320,
+            "n": 320,
+            "rate": 1.0,
+            "ci95": [
+              0.9881,
+              1.0
+            ]
+          },
+          "latency_ms": {
+            "p50": 170.0,
+            "p90": 210.0
+          },
+          "before_bolt_moved_2mm": {
+            "k": 5,
+            "n": 320,
+            "rate": 0.015625,
+            "ci95": [
+              0.0067,
+              0.036
+            ]
+          },
+          "before_bolt_cleared_strike": {
+            "k": 293,
+            "n": 320,
+            "rate": 0.915625,
+            "ci95": [
+              0.88,
+              0.9414
+            ]
+          },
+          "fired_before_onset": 0
+        },
+        "instant": {
+          "detected": {
+            "k": 320,
+            "n": 320,
+            "rate": 1.0,
+            "ci95": [
+              0.9881,
+              1.0
+            ]
+          },
+          "latency_ms": {
+            "p50": 200.0,
+            "p90": 331.0
+          },
+          "before_bolt_moved_2mm": {
+            "k": 0,
+            "n": 320,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0119
+            ]
+          },
+          "before_bolt_cleared_strike": {
+            "k": 320,
+            "n": 320,
+            "rate": 1.0,
+            "ci95": [
+              0.9881,
+              1.0
+            ]
+          },
+          "fired_before_onset": 0
+        },
+        "debounced": {
+          "detected": {
+            "k": 320,
+            "n": 320,
+            "rate": 1.0,
+            "ci95": [
+              0.9881,
+              1.0
+            ]
+          },
+          "latency_ms": {
+            "p50": 350.0,
+            "p90": 380.0
+          },
+          "before_bolt_moved_2mm": {
+            "k": 0,
+            "n": 320,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0119
+            ]
+          },
+          "before_bolt_cleared_strike": {
+            "k": 100,
+            "n": 320,
+            "rate": 0.3125,
+            "ci95": [
+              0.2642,
+              0.3653
+            ]
+          },
+          "fired_before_onset": 0
+        },
+        "bolt_moved_2mm": {
+          "k": 320,
+          "n": 320,
+          "rate": 1.0,
+          "ci95": [
+            0.9881,
+            1.0
+          ]
+        },
+        "bolt_cleared_strike": {
+          "k": 320,
+          "n": 320,
+          "rate": 1.0,
+          "ci95": [
+            0.9881,
+            1.0
+          ]
+        }
+      }
+    },
+    "slow_push": {
+      "ramp_s": 20.0,
+      "peak_n": 30.0,
+      "detected": {
+        "k": 40,
+        "n": 40,
+        "rate": 1.0,
+        "ci95": [
+          0.9124,
+          1.0
+        ]
+      },
+      "before_bolt_moved_2mm": {
+        "k": 40,
+        "n": 40,
+        "rate": 1.0,
+        "ci95": [
+          0.9124,
+          1.0
+        ]
+      },
+      "force_at_alarm_n": {
+        "p50": 5.8,
+        "p90": 6.2
+      }
+    },
+    "setup": {
+      "val_units": 40,
+      "test_units": 80,
+      "hours_per_unit": 0.5,
+      "knock_rate_per_min": 0.5,
+      "knock_force_n": [
+        2.0,
+        15.0
+      ],
+      "knock_duration_ms": [
+        20,
+        120
+      ],
+      "prying_trials_per_force_per_unit": 4,
+      "prying_ramp_s": [
+        0.2,
+        1.0
+      ],
+      "prying_pump_hz": [
+        1.5,
+        4.0
+      ],
+      "prying_hold_s": 2.5
+    }
+  },
+  "detector_defaults": {
+    "learn_runs": 30,
+    "features": [
+      "peak",
+      "mean",
+      "energy",
+      "t_peak",
+      "settle",
+      "plateau",
+      "residual",
+      "centroid"
+    ],
+    "scored_features": [
+      "peak",
+      "mean",
+      "energy",
+      "settle",
+      "plateau",
+      "residual",
+      "centroid"
+    ]
+  },
+  "runtime_s": 348.2
+}

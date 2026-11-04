@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>Phantom Door</title>
+  <title>Telltale</title>
   <style>
     /* ── Design tokens ── */
     :root {
@@ -12,9 +12,9 @@
       --card:      #18181b;
       --border:    #27272a;
       --border-hi: #3f3f46;
-      --accent:    #7c3aed;
-      --accent-hi: #a855f7;
-      --accent-lo: #1e1030;
+      --accent:    #E5383B;
+      --accent-hi: #ff5c5f;
+      --accent-lo: #2a0d0e;
       --green:     #22c55e;
       --green-lo:  #0d2618;
       --red:       #ef4444;
@@ -502,7 +502,7 @@
 <div class="topbar">
   <div class="logo">
     <div class="logo-icon">🔒</div>
-    Phantom Door
+    Telltale
   </div>
   <div class="conn-badge offline" id="connBadge">
     <div class="dot"></div>
@@ -519,7 +519,7 @@
 
 <!-- Lockout Alert -->
 <div class="alert-strip" id="alertStrip">
-  ⚠ SECURITY ALERT — 3 failed attempts. Sensor locked for 30s.
+  <span id="alertText">⚠ SECURITY ALERT — 3 failed attempts. Sensor locked for 30s.</span>
 </div>
 
 <!-- Tabs -->
@@ -680,7 +680,7 @@
   </div>
 
   <div style="margin-top:16px;text-align:center;color:var(--sub);font-size:12px">
-    Phantom Door v1.0 · ESP32 + R307 + SG90
+    Telltale · ESP32 + R307 + SG90 + INA219 · formerly Phantom Door
   </div>
 </div>
 
@@ -697,7 +697,7 @@ let unlockStart   = 0;
 const UNLOCK_MS   = 4000;
 
 // ── Restore saved IP from localStorage ───────────────────────────
-const savedIP = localStorage.getItem('phantomIP');
+const savedIP = localStorage.getItem('telltaleIP') || localStorage.getItem('phantomIP');
 if (savedIP) {
   document.getElementById('espIP').value = savedIP;
 }
@@ -725,7 +725,7 @@ function connectToESP() {
   if (!ip) return toast('Enter an IP address', 'error');
 
   espIP = ip;
-  localStorage.setItem('phantomIP', ip);
+  localStorage.setItem('telltaleIP', ip);
   document.getElementById('settingsIP').textContent = 'http://' + ip;
 
   // Close previous WS
@@ -744,7 +744,7 @@ function openWS() {
   ws.onopen = () => {
     setConnected(true);
     document.getElementById('settingsWS').textContent = 'Connected to ws://' + espIP + ':81';
-    toast('Connected to Phantom Door', 'success');
+    toast('Connected to Telltale', 'success');
   };
   ws.onclose = () => {
     setConnected(false);
@@ -773,11 +773,19 @@ function handleWS(raw) {
     return;
   }
 
-  // Security alert
+  // Security / tamper / fault alert: {"alert":"tamper","kind":"forced_while_locked","message":...}
   if (d.alert) {
+    const msg = d.message || (d.kind ? d.alert + ': ' + String(d.kind).replace(/_/g, ' ') : d.alert);
+    document.getElementById('alertText').textContent = '⚠ ' + msg.toUpperCase();
     document.getElementById('alertStrip').classList.add('show');
     setTimeout(() => document.getElementById('alertStrip').classList.remove('show'), 10000);
-    toast(d.alert, 'error');
+    toast(msg, 'error');
+    return;
+  }
+
+  // Live current trace and per-actuation scores (shown in the console for now)
+  if (d.trace || d.actuation) {
+    if (d.actuation) console.info('telltale actuation', d.actuation);
     return;
   }
 
@@ -886,6 +894,11 @@ async function remoteUnlock() {
   }
 }
 
+// ── Escape text that came from the device (user names are user input) ──
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
 // ── Load Users ────────────────────────────────────────────────────
 async function loadUsers() {
   if (!espIP) { return; }
@@ -900,17 +913,18 @@ async function loadUsers() {
     }
     list.innerHTML = '';
     d.users.forEach(u => {
-      const initials = (u.name || 'U').charAt(0).toUpperCase();
+      const initials = esc((u.name || 'U').charAt(0).toUpperCase());
       const el = document.createElement('div');
       el.className = 'user-card';
       el.innerHTML = `
         <div class="user-avatar">${initials}</div>
         <div class="user-info">
-          <div class="user-name">${u.name}</div>
-          <div class="user-slot">Slot #${u.slot}</div>
+          <div class="user-name">${esc(u.name)}</div>
+          <div class="user-slot">Slot #${Number(u.slot)}</div>
         </div>
-        <button class="btn-del" onclick="deleteUser(${u.slot}, '${u.name}')">Remove</button>
+        <button class="btn-del">Remove</button>
       `;
+      el.querySelector('.btn-del').addEventListener('click', () => deleteUser(Number(u.slot), u.name));
       list.appendChild(el);
     });
     document.getElementById('statUsers').textContent = d.users.length;
@@ -1024,7 +1038,7 @@ function renderLog(items, containerId) {
     div.innerHTML = `
       <div class="log-badge ${item.success ? 'ok' : 'bad'}">${item.success ? '✓' : '✗'}</div>
       <div>
-        <div class="log-name">${item.name}</div>
+        <div class="log-name">${esc(item.name)}</div>
         <div style="color:var(--muted);font-size:12px">${item.success ? 'Access granted' : 'Access denied'}</div>
       </div>
       <div class="log-time">#${items.length - idx}</div>
